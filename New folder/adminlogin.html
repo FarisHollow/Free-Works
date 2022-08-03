@@ -1,0 +1,84 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title>Login</title>
+</head>
+<body>
+
+		
+		<form method="post" action="loginchk.php">
+			
+
+			<input id="text" type="text" name="user_name"><br><br>
+			<input id="text" type="password" name="password"><br><br>
+
+			<input id="button" type="submit" value="Login"><br><br>
+
+			<a href="signup.php">Click to Signup</a><br><br>
+		</form>
+
+</body>
+</html> -->
+
+<html>
+<head>
+	<title>Admin Login</title>
+</head>
+<body align="center">
+
+    <h1>Admin Authentication</h1>
+<table align="center" border="2">
+<tr>
+    <td>
+    <form method="post" action="../controller/adminloginchk.php" enctype="" name = "myform" onsubmit="return validateForm()">
+	
+	
+			
+			Username : <br />
+			<input id="lname" type="text" name="user_name" value="" placeholder="Enter username" /> <br />
+			Password : <br />
+			<input id="lpass" type="password" name="password" value="" placeholder="Enter Password" /> <br />
+			<input type="submit" name="submit" value="LogIn" />
+			
+		
+	</form>
+
+		<script>
+            function validateForm (){
+                let name = document.getElementById("lname").value;
+                let pass = document.getElementById("lpass").value;
+        
+                // let g = document.getElementById("m").value;
+                // let h = document.getElementById("fe").value;
+                // let i = document.getElementById("o").value;
+                
+                if(name =="" && pass =="" ){
+
+                  document.getElementById("show").innerHTML = "PLEASE FILL UP ALL THE INFORMATION" ;
+                  return false;
+                }else{
+                    document.getElementById("show").innerHTML = "SUCCESSFULLY LOGGED IN, WAIT A MOMENT" ;
+                  return true;
+                }
+            
+            }
+            </script>
+	
+	
+	<a href="../view/adminsignup.html"> <input type="submit" name="Submit" value="Sign up"></a>
+		
+		
+
+	</td>
+	</tr>
+	<tr>
+		<td>
+			<a href="main.php"> <input type="button" name="button" value="Back to Main Menu"></a>
+		</td>
+	</tr>
+	</table>
+	<p id="show"></p>
+
+
+</body>
+</html>

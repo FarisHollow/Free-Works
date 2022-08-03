@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+ 
+    <head>
+        <title>Sign Up</title>
+    </head>
+ 
+  
+    <body align="center">
+        
+              <h1>Welcome to sign as Admin</h1><br>
+              <h2>Please Signup to this form</h2><br><br>
+              
+              
+              <center>          
+<form  action="../controller/adminsignupchk.php" onsubmit="return validateForm()" method="POST" >
+    
+        
+        
+    <div class=center>
+        <table border="2">
+            <tr>
+                <td>Name:</td>
+                <td><input id="name" type="text" name="user_name"/></td>
+            </tr>
+          
+     
+ 
+            <tr>
+                <td>Password:</td>
+                <td><input id = "pass" type="password" name="password"  /></td>
+              </tr>
+         
+     </tr>
+
+     <tr>
+        <td>Confirm Password:</td>
+        <td><input id ="cpass" type="password" name="cPassword"  /></td>
+      </tr>
+    
+      <tr>
+          <td>E-mail:</td>
+          <td><input id="mail" type="email" name="email"  /></td>
+        </tr>
+        <tr>
+            <td>Phone Number:</td>
+            <td><input id ="phone" type="text" name="phnNum"  /></td>
+        </tr>
+ <tr>
+    <tr>
+        <td>Date of Birth:</td>
+        <td><input id="dob" type="date" name="DOB" /></td>
+        
+      </tr>
+ 
+ </tr>
+
+ <td>Gender:</td>
+ <td>
+   <input id= "m" type="radio" name="gender" value="Male" /> Male
+   <input id="fe" type="radio" name="gender" value="Female" /> Female
+   <input id="o"type="radio" name="gender" value="Other" /> Other
+ </td>
+        
+         </table>
+        <p id="show"></p>
+         <input type="submit"  name="submit" value="Sign Up">
+         <a href="adminlogin.html"><input type="button" name="" value="Go Back" /></a>
+         <input type="reset" name="reset" value="Reset" />
+
+         </form>
+         </center>
+         <script>
+            function validateForm (){
+                let a = document.getElementById("name").value;
+                let b = document.getElementById("pass").value;
+                let c = document.getElementById("cpass").value;
+                let d = document.getElementById("mail").value;
+                let e = document.getElementById("phone").value;
+                let f = document.getElementById("dob").value;
+                // let g = document.getElementById("m").value;
+                // let h = document.getElementById("fe").value;
+                // let i = document.getElementById("o").value;
+                
+                if(a=="" && b=="" && c==""&& d=="" && e=="" && f==""){
+
+                  document.getElementById("show").innerHTML = "PLEASE FILL UP ALL THE INFORMATION" ;
+                  return false;
+                }else{
+
+                  // var passformat = /^[A-Za-z]\w{7,14}$/;
+
+                  // if(b.value.match(passformat)) {  
+                  //  document.getElementById("show").innerHTML = "**Fill the password please!";  
+                  //  return false;  
+                  //   }  
+   
+                  //minimum password length validation  
+                   if(b.length < 5) {  
+                    document.getElementById("show").innerHTML = "PASSWORD LENGTH MUST BE IN 5 CHARACTERS";  
+                    return false;  
+                    }  
+  
+                  //maximum length of password validation  
+                 if(b.length > 10) {  
+                  document.getElementById("show").innerHTML = "PASSWORD LENGTH MUST NOT EXCEED 10 CHARACTERS";  
+                  return false;  
+                 }
+                 
+                 else {  
+                  document.getElementById("show").innerHTML = "SUBMITTED SUCCESSFULLY, WAIT A MOMENT" ;
+                    return true;                 }  
+
+
+                  }
+
+                    
+
+                  
+                  
+                }
+            
+            
+            </script>
+</div>
+         
+     </body>
+     </html>
+     <!-- <script>
+    
+
+function ValidateEmail()
+{
+let pass = document.getElementById("mail").value;
+var mailformat = /^w+([.-]?w+)*@w+([.-]?w+)*(.w{2,3})+$/;
+if(pass.value.match(mailformat))
+{
+alert("You have entered a valid email address!");    //The pop up alert for a valid email address
+document.form1.text1.focus();
+return true;
+}
+else
+{
+alert("You have entered an invalid email address!");    //The pop up alert for an invalid email address
+document.form1.text1.focus();
+return false;
+}
+}
+
+
+function Validatepass()
+{
+  let pass = document.getElementById("pass").value;
+  //check empty password field  
+  if(pass == "") {  
+     document.getElementById("message").innerHTML = "**Fill the password please!";  
+     return false;  
+  }  
+   
+ //minimum password length validation  
+  if(pass.length < 8) {  
+     document.getElementById("message").innerHTML = "**Password length must be atleast 8 characters";  
+     return false;  
+  }  
+  
+//maximum length of password validation  
+  if(pass.length > 15) {  
+     document.getElementById("message").innerHTML = "**Password length must not exceed 15 characters";  
+     return false;  
+  } else {  
+     alert("Password is correct");  
+  }  
+}  
+
+
+</script> -->
